@@ -21,10 +21,19 @@ class StoreUpdateProductRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
+        $rules = [
             'name' => 'required|min:3|max:255',
             'price' => 'required|integer',
             'description' => 'required|min:3|max:255'
         ];
+
+        if($this->method() === 'PUT' || $this->method() === 'PATCH'){
+            $rules['name'] = 'nullable|min:3|max:255';
+            $rules['price'] = 'nullable|integer';
+            $rules['description'] = 'nullable|min:3|max:255';
+        }
+
+
+        return $rules;
     }
 }
