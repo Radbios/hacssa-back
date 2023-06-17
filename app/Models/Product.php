@@ -14,4 +14,9 @@ class Product extends Model
         'price',
         'description'
     ];
+
+    public function purchases()
+    {
+        return $this->hasMany(Purchase::class);
+    }
 }

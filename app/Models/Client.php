@@ -16,4 +16,9 @@ class Client extends Model
         'last_purchase_date',
         'total_purchase_amount'
     ];
+
+    public function purchases()
+    {
+        return $this->hasMany(Purchase::class);
+    }
 }
