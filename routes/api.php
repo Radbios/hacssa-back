@@ -2,10 +2,13 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\ClientController;
-use App\Http\Controllers\PurchaseController;
-use App\Http\Controllers\AddressController;
+use App\Http\Controllers\{
+    ProductController,
+    ClientController,
+    PurchaseController,
+    AddressController,
+    InventoryController
+};
 
 /*
 |--------------------------------------------------------------------------
@@ -30,5 +33,8 @@ Route::apiResource('/clients', ClientController::class);
 Route::apiResource('/purchases', PurchaseController::class);
 
 Route::apiResource('/addresses', AddressController::class);
+
+Route::apiResource('/inventories', InventoryController::class);
+
 
 
