@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\AddressController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,4 +28,7 @@ Route::apiResource('/products', ProductController::class);
 Route::apiResource('/clients', ClientController::class);
 
 Route::apiResource('/purchases', PurchaseController::class);
+
+Route::apiResource('/addresses', AddressController::class);
+
 

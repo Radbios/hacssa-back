@@ -19,6 +19,7 @@ class ClientResource extends JsonResource
             'name'=> $this->name,
             'phone' => $this->phone,
             'gender' => $this->gender,
+            'address' => $this->addresses,
             'last_purchase_date' => $this->last_purchase_date,
             'total_purchase_amount' => $this->total_purchase_amount,
             'created_at' => $this->created_at->format('d-m-Y')

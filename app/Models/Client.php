@@ -21,4 +21,9 @@ class Client extends Model
     {
         return $this->hasMany(Purchase::class);
     }
+
+    public function addresses()
+    {
+        return $this->hasMany(Address::class);
+    }
 }
