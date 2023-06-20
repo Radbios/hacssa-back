@@ -1,0 +1,48 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\MyInventory;
+use App\Http\Resources\MyInventoryResource;
+use App\Http\Requests\StoreUpdateMyInventoryRequest;
+
+class MyInventoryController extends Controller
+{
+     public function index()
+    {
+        $data = MyInventory::all();
+
+        return response()->json($data);
+    }
+
+    public function store(StoreUpdateMyInventoryRequest $request)
+    {
+        $data = MyInventory::create($request->all());
+
+        return new MyInventoryResource($data);
+    }
+
+    public function show(string $id)
+    {
+        $data = MyInventory::findOrFail($id);
+
+        return new MyInventoryResource($data);
+    }
+
+    public function update(StoreUpdateMyInventoryRequest $request, string $id)
+    {
+        $data = MyInventory::findOrFail($id);
+        $data->update($request->all());
+
+        return new MyInventoryResource($data);
+    }
+
+    public function destroy(string $id)
+    {
+        $data = MyInventory::findOrFail($id);
+        $data->delete();
+
+        return new MyInventoryResource($data);
+    }
+}

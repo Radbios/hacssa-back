@@ -7,7 +7,8 @@ use App\Http\Controllers\{
     ClientController,
     PurchaseController,
     AddressController,
-    InventoryController
+    InventoryController,
+    MyInventoryController
 };
 
 /*
@@ -35,6 +36,9 @@ Route::apiResource('/purchases', PurchaseController::class);
 Route::apiResource('/addresses', AddressController::class);
 
 Route::apiResource('/inventories', InventoryController::class);
+
+Route::apiResource('/myinventory', MyInventoryController::class);
+
 
 
 
