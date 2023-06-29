@@ -6,6 +6,7 @@ use App\Http\Controllers\{
     ProductController,
     ClientController,
     PurchaseController,
+    PaymentController,
     AddressController,
     InventoryController,
     MyInventoryController,
@@ -31,15 +32,19 @@ Route::post('/login', [AuthController::class, "login"]);
 
 Route::apiResource('/products', ProductController::class);
 
-Route::apiResource('/clients', ClientController::class);
-
-Route::apiResource('/purchases', PurchaseController::class);
-
-Route::apiResource('/addresses', AddressController::class);
-
 Route::apiResource('/inventories', InventoryController::class);
 
 Route::apiResource('/myinventory', MyInventoryController::class);
+
+Route::apiResource('/clients', ClientController::class);
+
+Route::apiResource('/addresses', AddressController::class);
+
+Route::apiResource('/purchases', PurchaseController::class);
+
+Route::apiResource('/payments', PaymentController::class);
+
+
 
 
 
