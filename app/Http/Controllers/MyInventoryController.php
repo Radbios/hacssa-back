@@ -18,6 +18,8 @@ class MyInventoryController extends Controller
 
     public function store(StoreUpdateMyInventoryRequest $request)
     {
+        $request['user_id'] = $request->user()->id;
+
         $data = MyInventory::create($request->all());
 
         return new MyInventoryResource($data);
@@ -33,6 +35,9 @@ class MyInventoryController extends Controller
     public function update(StoreUpdateMyInventoryRequest $request, string $id)
     {
         $data = MyInventory::findOrFail($id);
+
+        $request['user_id'] = $request->user()->id;
+
         $data->update($request->all());
 
         return new MyInventoryResource($data);

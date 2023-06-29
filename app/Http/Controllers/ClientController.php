@@ -19,6 +19,7 @@ class ClientController extends Controller
 
     public function store(StoreUpdateClientRequest $request)
     {
+        $request['user_id'] = $request->user()->id;
         $data = Client::create($request->all());
 
         return new ClientResource($data);
@@ -33,7 +34,10 @@ class ClientController extends Controller
 
     public function update(StoreUpdateClientRequest $request, string $id)
     {
+
         $data = Client::findOrFail($id);
+
+        $request['user_id'] = $request->user()->id;
         $data->update($request->all());
 
         return new ClientResource($data);

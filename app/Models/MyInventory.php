@@ -12,6 +12,7 @@ class MyInventory extends Model
     protected $table = "my_inventory";
 
     protected $fillable = [
+        'user_id',
         'inventory_id',
         'quantity',
         'sold'

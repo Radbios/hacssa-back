@@ -27,6 +27,8 @@ use App\Http\Controllers\{
 
 Route::middleware('auth:sanctum')->group(function(){
     Route::post('/logout', [AuthController::class, "logout"]);
+    
+    Route::apiResource('/clients', ClientController::class);
 });
 
 Route::post('/login', [AuthController::class, "login"]);
@@ -37,7 +39,6 @@ Route::apiResource('/inventories', InventoryController::class);
 
 Route::apiResource('/myinventory', MyInventoryController::class);
 
-Route::apiResource('/clients', ClientController::class);
 
 Route::apiResource('/addresses', AddressController::class);
 
