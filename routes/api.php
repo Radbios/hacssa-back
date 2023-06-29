@@ -10,6 +10,7 @@ use App\Http\Controllers\{
     AddressController,
     InventoryController,
     MyInventoryController,
+    UserController,
     AuthController
 };
 
@@ -43,6 +44,8 @@ Route::apiResource('/addresses', AddressController::class);
 Route::apiResource('/purchases', PurchaseController::class);
 
 Route::apiResource('/payments', PaymentController::class);
+
+Route::apiResource('/users', UserController::class);
 
 
 
