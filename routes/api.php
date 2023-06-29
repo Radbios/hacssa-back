@@ -8,7 +8,8 @@ use App\Http\Controllers\{
     PurchaseController,
     AddressController,
     InventoryController,
-    MyInventoryController
+    MyInventoryController,
+    AuthController
 };
 
 /*
@@ -22,10 +23,11 @@ use App\Http\Controllers\{
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return "OK";
+Route::middleware('auth:sanctum')->group(function(){
+    Route::post('/logout', [AuthController::class, "logout"]);
 });
 
+Route::post('/login', [AuthController::class, "login"]);
 
 Route::apiResource('/products', ProductController::class);
 
