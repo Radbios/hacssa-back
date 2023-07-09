@@ -14,7 +14,7 @@ class PurchaseController extends Controller
     {
         $data = Purchase::all();
 
-        return response()->json($data);
+        return response()->json(['data' => $data]);
     }
 
     public function store(StoreUpdatePurchaseRequest $request)

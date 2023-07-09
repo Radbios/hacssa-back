@@ -13,7 +13,7 @@ class ProductController extends Controller
     {
         $data = Product::all();
 
-        return response()->json($data);
+        return response()->json(['data' => $data]);
     }
 
     public function store(StoreUpdateProductRequest $request)

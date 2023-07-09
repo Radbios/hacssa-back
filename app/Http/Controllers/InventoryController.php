@@ -13,7 +13,7 @@ class InventoryController extends Controller
     {
         $data = Inventory::all();
 
-        return response()->json($data);
+        return response()->json(['data' => $data]);
     }
 
     public function store(StoreUpdateInventoryRequest $request)

@@ -15,7 +15,7 @@ class UserController extends Controller
     {
         $data = User::all();
 
-        return response()->json($data);
+        return response()->json(['data' => $data]);
     }
 
     public function store(StoreUpdateUserRequest $request)

@@ -14,7 +14,7 @@ class ClientController extends Controller
     {
         $data = Client::all();
 
-        return response()->json($data);
+        return response()->json(['data' => $data]);
     }
 
     public function store(StoreUpdateClientRequest $request)

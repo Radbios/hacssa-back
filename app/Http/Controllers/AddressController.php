@@ -13,7 +13,7 @@ class AddressController extends Controller
     {
         $data = Address::all();
 
-        return response()->json($data);
+        return response()->json(['data' => $data]);
     }
 
     public function store(StoreUpdateAddressRequest $request)

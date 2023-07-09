@@ -13,7 +13,7 @@ class PaymentController extends Controller
     {
         $data = Payment::all();
 
-        return response()->json($data);
+        return response()->json(['data' => $data]);
     }
 
     public function store(StoreUpdatePaymentRequest $request)
