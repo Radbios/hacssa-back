@@ -15,10 +15,11 @@ return new class extends Migration
             $table->id();
             $table->foreignId("user_id")->constrained("users")->cascadeOnDelete();
             $table->string("name");
-            $table->string("phone");
+            $table->string("phone")->nullable();
             $table->string("gender");
             $table->date("last_purchase_date")->nullable();
-            $table->integer("total_purchase_amount")->nullable();
+            $table->double("total_purchase_amount")->nullable();
+            $table->double("debt")->nullable();
             $table->timestamps();
         });
     }

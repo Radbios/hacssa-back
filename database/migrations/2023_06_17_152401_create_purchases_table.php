@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId("client_id")->constrained("clients")->cascadeOnDelete();
             $table->foreignId("product_id")->constrained("products")->cascadeOnDelete();
             $table->integer("quantity");
-            $table->double("discount_unit");
+            $table->double("discount_unit")->nullable();
             $table->double("total");
             $table->date("date");
             $table->timestamps();

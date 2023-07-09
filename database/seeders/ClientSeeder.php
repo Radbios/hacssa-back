@@ -19,6 +19,7 @@ class ClientSeeder extends Seeder
             'name' => 'Fabiano',
             'phone' => 123,
             'gender' => 'male',
+            'debt' => 0
         ]);
     }
 }
