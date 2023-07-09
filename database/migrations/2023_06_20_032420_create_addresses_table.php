@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string("state")->nullable();
             $table->string("country")->nullable();
             $table->integer("postal_code")->nullable();
-            $table->integer("latitude")->required();
-            $table->integer("longitude")->required();
+            $table->double("latitude")->required();
+            $table->double("longitude")->required();
             $table->timestamps();
         });
     }
