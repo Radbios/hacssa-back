@@ -16,7 +16,7 @@ class PurchaseResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'client_id'=> $this->client,
+            'client'=> $this->client,
             'product_id' => $this->product,
             'quantity' => $this->quantity,
             'total' => $this->total,

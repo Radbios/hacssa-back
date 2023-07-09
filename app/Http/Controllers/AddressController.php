@@ -12,7 +12,9 @@ class AddressController extends Controller
     public function index()
     {
         $data = Address::all();
-
+        foreach ($data as $item) {
+            $item['client'] = $item->client;
+        }
         return response()->json(['data' => $data]);
     }
 

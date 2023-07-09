@@ -27,11 +27,11 @@ use App\Http\Controllers\{
 
 Route::middleware('auth:sanctum')->group(function(){
     Route::post('/logout', [AuthController::class, "logout"]);
-    
-    Route::apiResource('/clients', ClientController::class);
+
 });
 
 Route::post('/login', [AuthController::class, "login"]);
+
 
 Route::apiResource('/products', ProductController::class);
 
@@ -48,6 +48,7 @@ Route::apiResource('/payments', PaymentController::class);
 
 Route::apiResource('/users', UserController::class);
 
+Route::apiResource('/clients', ClientController::class);
 
 
 
