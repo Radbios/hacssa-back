@@ -13,12 +13,12 @@ class MyInventory extends Model
 
     protected $fillable = [
         'user_id',
-        'inventory_id',
+        'product_id',
         'quantity',
         'sold'
     ];
 
-    public function inventory()
+    public function product()
     {
         return $this->belongsTo(Inventory::class);
     }

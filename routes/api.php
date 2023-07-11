@@ -35,8 +35,6 @@ Route::post('/login', [AuthController::class, "login"]);
 
 Route::apiResource('/products', ProductController::class);
 
-Route::apiResource('/inventories', InventoryController::class);
-
 Route::apiResource('/myinventory', MyInventoryController::class);
 
 
