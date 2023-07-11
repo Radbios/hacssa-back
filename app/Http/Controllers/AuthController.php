@@ -24,7 +24,10 @@ class AuthController extends Controller
             ]);
         }
 
-        return $user->createToken("auth_token")->plainTextToken;
+        return [
+            'token' => $user->createToken("auth_token")->plainTextToken,
+            'user' => $user
+        ];
     }
 
     public function logout(Request $request){
