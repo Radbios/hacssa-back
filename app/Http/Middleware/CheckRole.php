@@ -17,13 +17,13 @@ class CheckRole
      */
     public function handle(Request $request, Closure $next, string $role): Response
     {
-        if ($role == 'admin' && User::get()->first()->role_id != Role::NV1){
+        if ($role == 'admin' && auth()->user()->role_id != Role::NV1){
             abort(403, 'Unauthorized action.');
         }
-        if ($role == 'director' && User::get()->first()->role_id > Role::NV2){
+        if ($role == 'director' && auth()->user()->role_id > Role::NV2){
             abort(403, 'Unauthorized action.');
         }
-        if ($role == 'sellers' && User::get()->first()->role_id > Role::NV3){
+        if ($role == 'sellers' && auth()->user()->role_id > Role::NV3){
             abort(403, 'Unauthorized action.');
         }
         return $next($request);
