@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string("name");
             $table->double("price");
             $table->string("description");
+            $table->integer("current_quantity");
+            $table->integer("total_quantity");
             $table->timestamps();
         });
     }

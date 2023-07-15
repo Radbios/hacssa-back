@@ -23,6 +23,10 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             ClientSeeder::class,
             AddressSeeder::class,
+            ProductSeeder::class,
+            MyInventorySeeder::class,
+            PurchaseSeeder::class,
+            PaymentSeeder::class,
         ]);
 
     }

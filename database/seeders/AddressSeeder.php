@@ -25,7 +25,7 @@ class AddressSeeder extends Seeder
         ]);
 
         Address::create([
-            'client_id' => 1,
+            'client_id' => 2,
             'street' => 1,
             'city' => 1,
             'state' => 1,
