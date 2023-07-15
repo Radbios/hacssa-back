@@ -14,8 +14,9 @@ class Client extends Model
         'name',
         'phone',
         'gender',
+        'debt',
         'last_purchase_date',
-        'total_purchase_amount'
+        'total_purchase_amount',
     ];
 
     public function user()
