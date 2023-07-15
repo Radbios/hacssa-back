@@ -11,10 +11,7 @@ class AddressController extends Controller
 {
     public function index()
     {
-        $data = Address::all();
-        foreach ($data as $item) {
-            $item['client'] = $item->client;
-        }
+        $data = AddressResource::collection(Address::all());
         return response()->json(['data' => $data]);
     }
 

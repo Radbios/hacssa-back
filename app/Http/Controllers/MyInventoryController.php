@@ -11,8 +11,7 @@ class MyInventoryController extends Controller
 {
      public function index()
     {
-        $data = MyInventory::all();
-
+        $data = MyInventoryResource::collection(MyInventory::all());
         return response()->json(['data' => $data]);
     }
 

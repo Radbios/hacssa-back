@@ -12,7 +12,7 @@ class PurchaseController extends Controller
 {
     public function index()
     {
-        $data = Purchase::all();
+        $data = PurchaseResource::collection(Purchase::all());
 
         return response()->json(['data' => $data]);
     }

@@ -16,10 +16,9 @@ class MyInventoryResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'inventory'=> $this->inventory,
+            'product'=> $this->product,
             'quantity' => $this->quantity,
             'sold' => $this->sold,
-
         ];
     }
 }

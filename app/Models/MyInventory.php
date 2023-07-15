@@ -20,6 +20,6 @@ class MyInventory extends Model
 
     public function product()
     {
-        return $this->belongsTo(Inventory::class);
+        return $this->belongsTo(Product::class);
     }
 }

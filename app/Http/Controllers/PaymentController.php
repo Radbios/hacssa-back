@@ -11,8 +11,7 @@ class PaymentController extends Controller
 {
     public function index()
     {
-        $data = Payment::all();
-
+        $data = PaymentResource::collection(Payment::all());
         return response()->json(['data' => $data]);
     }
 
