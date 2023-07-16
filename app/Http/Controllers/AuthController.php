@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
+use App\Http\Resources\UserResource;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
@@ -26,7 +27,7 @@ class AuthController extends Controller
 
         return [
             'token' => $user->createToken("auth_token")->plainTextToken,
-            'user' => $user
+            'user' => new UserResource($user)
         ];
     }
 
