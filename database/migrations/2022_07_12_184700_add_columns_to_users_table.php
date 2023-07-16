@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->foreignId("role_id")->constrained("roles")->cascadeOnDelete();
+            $table->double("currentMoney")->default(0);
         });
     }
 
@@ -21,7 +22,10 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
-
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign(['role_id']);
+            $table->dropColumn('role_id');
+            $table->dropColumn('currentMoney');
+        });
     }
 };
