@@ -3,7 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Services\UserService;
+use App\Http\Services\UserService;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class UserResource extends JsonResource
@@ -20,7 +20,7 @@ class UserResource extends JsonResource
             'name'=> $this->name,
             'email' => $this->email,
             'role' => $this->role->name,
-            'money' => UserService::getMoney()
+            'money' => UserService::getMoney($this)
         ];
     }
 }
