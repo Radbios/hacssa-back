@@ -8,14 +8,20 @@ use Illuminate\Support\Facades\Auth;
 
 class UserService{
     static public function getMoney($user){
-        $clients = $user->clients;
-        $value = 0;
-        foreach ($clients as $client) {
-            $payments = $client->payments->where("confirm", false);
-            foreach ($payments as $payment) {
-                $value += $payment->value;
-            }
+        if($user->role->name == 'ADMINISTRADOR'){
+            return Payment::where('confirm', false)
+                                            ->pluck('value')
+                                            ->flatten()
+                                            ->sum();
         }
-        return $value;
+
+
+        return $user->clients()->with('payments')
+                                    ->get()
+                                    ->pluck('payments')
+                                    ->where('confirm', false)
+                                    ->flatten()
+                                    ->pluck('value')
+                                    ->sum();
     }
 }

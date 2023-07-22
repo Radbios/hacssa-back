@@ -24,7 +24,7 @@ class UserSeeder extends Seeder
             'name' => 'seller',
             'email' => 'seller@test.com',
             'password' => Hash::make('seller'),
-            'role_id' => 1
+            'role_id' => 3
         ]);
     }
 }
