@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('client_id')->constrained('clients')->cascadeOnDelete();
             $table->double('value');
             $table->date('date');
+            $table->boolean('confirm')->default(false);
             $table->timestamps();
         });
     }

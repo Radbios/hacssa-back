@@ -21,7 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'role_id'
+        'role_id',
+        'currentMoney'
     ];
 
     /**
@@ -44,8 +45,13 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function role()
+    public function role(): belongsTo
     {
         return $this->belongsTo(Role::class);
+    }
+
+    public function clients(): hasMany
+    {
+        return $this->hasMany(Client::class);
     }
 }

@@ -12,7 +12,8 @@ class Payment extends Model
     protected $fillable = [
         'client_id',
         'value',
-        'date'
+        'date',
+        'confirm'
     ];
 
     public function client()
