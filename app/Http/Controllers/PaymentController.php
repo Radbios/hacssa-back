@@ -17,14 +17,12 @@ class PaymentController extends Controller
 
     public function store(StoreUpdatePaymentRequest $request)
     {
-        $request['total'] = (Product::find($request->product_id)->price - $request->discount_unit) * $request->quantity;
         $data = Payment::create($request->all());
         return new PaymentResource($data);
     }
 
     public function update(StoreUpdatePaymentRequest $request, string $id)
     {
-        $request['total'] = (Product::find($request->product_id)->price - $request->discount_unit) * $request->quantity;
         $data = Payment::findOrFail($id);
         $data->update($request->all());
 
