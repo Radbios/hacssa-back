@@ -11,7 +11,7 @@ class StoreUpdatePaymentRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,7 @@ class StoreUpdatePaymentRequest extends FormRequest
     public function rules(): array
     {
         $rules = [
-            'value' => 'required|integer',
+            'value' => 'required',
             'date' => 'required',
         ];
 

@@ -17,6 +17,7 @@ class PaymentController extends Controller
 
     public function store(StoreUpdatePaymentRequest $request)
     {
+        return $request;
         $data = Payment::create($request->all());
         return new PaymentResource($data);
     }
